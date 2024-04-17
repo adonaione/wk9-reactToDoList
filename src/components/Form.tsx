@@ -12,7 +12,9 @@ type ToDoFormProps = {
 export default function ToDoForm({ addNewToDo}: ToDoFormProps) {
     const [newToDo, setNewToDo] = useState<ToDoFormDataType>({
         title: '',
-        body: ''
+        body: '',
+        dueDate: '',
+        completed: false
     });
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,10 +35,12 @@ export default function ToDoForm({ addNewToDo}: ToDoFormProps) {
             <Card.Body>
                 <h3 className="text-center">Create New ToDo</h3>
                 <Form onSubmit={handleFormSubmit}>
-                    <Form.Label>ToDo Title</Form.Label>
+                    <Form.Label>Title</Form.Label>
                     <Form.Control name='title' placeholder='Enter New ToDo Title' value={newToDo.title} onChange={handleInputChange} />
-                    <Form.Label>ToDo Body</Form.Label>
+                    <Form.Label>Body</Form.Label>
                     <Form.Control name='body' placeholder='Enter New ToDo Body' value={newToDo.body} onChange={handleInputChange} />
+                    <Form.Label>Due Date</Form.Label>
+                    <Form.Control name='dueDate' placeholder='Enter New ToDo Due Date' value={newToDo.dueDate} onChange={handleInputChange} />
                     <Button className='mt-3 w-100' variant='success' type='submit'>Create ToDo</Button>
                 </Form>
             </Card.Body>

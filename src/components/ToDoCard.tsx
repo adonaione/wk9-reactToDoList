@@ -1,13 +1,15 @@
 import { ToDoType } from '../types'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import todos from '../views/Home';
+
 
 type ToDoCardProps = {
-    todo: ToDoType
+    todo: ToDoType,
+    completed: boolean,
+    handleClick: () => void
 }
 
-export default function ToDoCard({ todo }: ToDoCardProps) {
+export default function ToDoCard({ todo, completed, handleClick }: ToDoCardProps) {
     
     // const changeCompleteStatus = useState('false');
     
@@ -19,9 +21,9 @@ export default function ToDoCard({ todo }: ToDoCardProps) {
                 {/* <Card.Subtitle>{ todo.author.username }</Card.Subtitle> */}
                 <Card.Text>{ todo.body }</Card.Text>
                 <Card.Text>{ todo.dueDate }</Card.Text>
-                <Card.Text>{ todo.completed ? 'Completed' : 'Incomplete' }</Card.Text>
+                <Card.Text>{completed ? `Complete` : 'Incomplete'}</Card.Text>
                 {/* create a button that toggles complete and incomplete */}
-                <Button onClick={() => changeCompleteStatus(todo.id)}>{ todo.completed ? 'Mark Incomplete' : 'Mark Complete' }</Button>
+                <Button variant='primary' onClick={handleClick}>Change Completion Status</Button>
             </Card.Body>
             <Card.Footer className='bg-custom2'>
                 <small className="text-muted">Author: {todo.author.username}</small>
