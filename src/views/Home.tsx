@@ -37,7 +37,9 @@ export default function Home({isLoggedIn, handleClick}: HomeProps) {
         body: "Do the dishes",
         dateCreated: "Fri, 29 Mar 2024 17:00:35 GMT",
         id: 1,
-        title: "Clean"
+        title: "Clean",
+        dueDate: "Mon, 01 Apr 2024 17:00:35 GMT",
+        completed: false
     },
     {
         author: {
@@ -51,7 +53,9 @@ export default function Home({isLoggedIn, handleClick}: HomeProps) {
         body: "Code that App",
         dateCreated: "Tue, 16 Apr 2024 17:00:35 GMT",
         id: 2,
-        title: "Homework"
+        title: "Homework",
+        dueDate: "Mon, 01 Apr 2024 17:00:35 GMT",
+        completed: false
     },
     {
       author: {
@@ -65,7 +69,9 @@ export default function Home({isLoggedIn, handleClick}: HomeProps) {
       body: "Go to bwell to guide a meditation session.",
       dateCreated: "Tue, 16 Apr 2024 17:00:35 GMT",
       id: 3,
-      title: "Guide Meditation"
+      title: "Guide Meditation",
+      dueDate: "Mon, 01 Apr 2024 17:00:35 GMT",
+      completed: false
   },
   {
     author: {
@@ -79,7 +85,9 @@ export default function Home({isLoggedIn, handleClick}: HomeProps) {
     body: "Go to the Jemez Mountains to microdose Bufo.",
     dateCreated: "Tue, 16 Apr 2024 17:00:35 GMT",
     id: 4,
-    title: "Father Blessing"
+    title: "Father Blessing",
+    dueDate: "Mon, 01 Apr 2024 17:00:35 GMT",
+    completed: false
 }
 ])
 
@@ -111,7 +119,7 @@ export default function Home({isLoggedIn, handleClick}: HomeProps) {
 
   return (
     <>
-      <h1>Greetings Earthlings</h1>
+      <h1>The ToDo List by React</h1>
         <Button variant='primary' onClick={handleClick}>Click Me!</Button>
         <h2>{isLoggedIn ? `Welcome Back` : 'Please Log In or Sign Up'}</h2>
         <Row>
